@@ -6,7 +6,7 @@
 /*   By: manuelgomezgomez <manuelgomezgomez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 10:25:47 by manuelgomez       #+#    #+#             */
-/*   Updated: 2023/07/18 16:45:41 by manuelgomez      ###   ########.fr       */
+/*   Updated: 2023/07/23 11:39:45 by manuelgomez      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ size_t	ft_strlen(char *str)
 	len = 0;
 	if (!str)
 		return (0);
-	while (str[len])
+	while (str[len] && str[len] != '\n')
+		len++;
+	if (str[len] == '\n')
 		len++;
 	return (len);
 }
 
-bool	ft_menage_buffer(char *buffer)
+bool	ft_manage_buffer(char *buffer)
 {
 	size_t	index1;
 	size_t	index2;
@@ -73,6 +75,6 @@ bool	ft_menage_buffer(char *buffer)
 	while (buffer[index1])
 		buffer[index2++] = buffer[index1++];
 	while (index2 < index1)
-		index2 = '\0';
+		buffer[index2++] = '\0';
 	return (found_nl);
 }

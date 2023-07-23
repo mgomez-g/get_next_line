@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: manuelgomezgomez <manuelgomezgomez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:20:02 by manuelgomez       #+#    #+#             */
-/*   Updated: 2023/07/18 17:02:32 by manuelgomez      ###   ########.fr       */
+/*   Created: 2023/07/23 12:01:11 by manuelgomez       #+#    #+#             */
+/*   Updated: 2023/07/23 12:17:30 by manuelgomez      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# define BUFFER_SIZE 42
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
